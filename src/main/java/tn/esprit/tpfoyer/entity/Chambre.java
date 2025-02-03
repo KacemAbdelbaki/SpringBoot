@@ -3,6 +3,8 @@ package tn.esprit.tpfoyer.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -17,4 +19,7 @@ public class Chambre {
 
     @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
+
+    @OneToMany
+    private List<Reservation> reservations;
 }
