@@ -23,7 +23,6 @@ public class Reservation {
     private Date anneeUniversitaire;
 
     private boolean estValide;
-
     @ManyToMany
     private List<Etudiant> etudiants;
 }
