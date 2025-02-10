@@ -8,18 +8,21 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
+@RequiredArgsConstructor
 @NoArgsConstructor
 public class Chambre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idChambre;
+    private long idChambre;
 
-    private Long numeroChambre;
+    private long numeroChambre;
 
     @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
 
     @OneToMany
     private List<Reservation> reservations;
+
+    @ManyToOne
+    private Bloc bloc;
 }
