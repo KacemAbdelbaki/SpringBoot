@@ -7,7 +7,6 @@ import tn.esprit.tpfoyer.entity.Etudiant;
 import tn.esprit.tpfoyer.repository.EtudiantRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -19,8 +18,8 @@ public class EtudiantService implements IEtudiantService{
     }
 
     @Override
-    public Optional<Etudiant> retrieveEtudiant(Long etudiantId) {
-        return etudiantRepository.findById(etudiantId);
+    public Etudiant retrieveEtudiant(Long etudiantId) {;
+        return etudiantRepository.findById(etudiantId).get();
     }
 
     @Override

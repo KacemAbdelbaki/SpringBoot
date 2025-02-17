@@ -6,7 +6,6 @@ import tn.esprit.tpfoyer.entity.Bloc;
 import tn.esprit.tpfoyer.repository.BlocRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -18,8 +17,8 @@ public class BlocServiceImp implements IBlocService{
     }
 
     @Override
-    public Optional<Bloc> retrieveBloc(Long blocId) {
-        return blocRepository.findById(blocId);
+    public Bloc retrieveBloc(Long blocId) {
+        return blocRepository.findById(blocId).get();
     }
 
     @Override
